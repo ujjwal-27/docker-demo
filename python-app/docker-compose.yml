@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    image: pythonapp-basics:latest
+    container_name: pythonapp-basics
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
