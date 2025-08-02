@@ -1,6 +1,7 @@
 services:
   db:
     image: postgres:14
+    container_name: node-postgres-db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -11,7 +12,8 @@ services:
 
   app:
     build: .
-    image: node-postgres-app
+    image: node-postgres-app:api
+    container_name: node-postgres-app
     ports:
       - "3000:3000"
     depends_on:
